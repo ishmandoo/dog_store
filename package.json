@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/ishmandoo/dog_store#readme",
   "dependencies": {
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
     "babel-register": "^6.5.2",
     "express": "^4.13.4",
     "mongoose": "^4.4.4",
