@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/ishmandoo/dog_store/issues"
   },
-  "homepage": "https://github.com/ishmandoo/dog_store#readme"
+  "homepage": "https://github.com/ishmandoo/dog_store#readme",
+  "dependencies": {
+    "babel-register": "^6.5.2"
+  }
 }
