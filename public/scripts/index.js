@@ -1,6 +1,5 @@
 var ProductBox = React.createClass({
   getProducts: function() {
-    this.setState({data: []})
     $.ajax({
       url: "/api/products",
       dataType: "json",
@@ -15,11 +14,14 @@ var ProductBox = React.createClass({
     this.getProducts();
   },
   getInitialState: function() {
+
     return {data: {products: []}};
   },
   render: function() {
+    console.log(this.state.data)
     var productNodes = this.state.data.products.map(function(product){
       return (
+
         <Product name={product.name}>{product.description}</Product>
       );
     });
