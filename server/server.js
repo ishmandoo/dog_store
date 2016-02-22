@@ -42,6 +42,7 @@ app.get('/api/products', function (req, res) {
 });
 
 app.post('/api/products', function(req, res){
+  console.log(req.body)
     var new_product = Product(req.body);
     new_product.save(function (err) {
         console.log('meow. Made a dog.');
