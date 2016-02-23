@@ -18,10 +18,11 @@ var ProductBox = React.createClass({
     return {data: {products: []}};
   },
   render: function() {
+    var product_box= this;
     var productNodes = this.state.data.products.map(function(product){
       return (
         <div>
-          <Product name={product.name}>{product.description}</Product>
+          <Product name={product.name} onNewProduct={product_box.getProducts}>{product.description}</Product>
         </div>
       );
     });
@@ -35,6 +36,14 @@ var ProductBox = React.createClass({
 });
 
 var Product = React.createClass({
+  destroyDog: function(){
+    $.ajax({
+      type: "DELETE",
+      data: {name: this.props.name},
+      url: "/api/products"
+    });
+    this.props.onNewProduct();
+  },
   render: function() {
     return (
       <div className="comment">
@@ -42,6 +51,7 @@ var Product = React.createClass({
           {this.props.name}
         </h2>
       {this.props.children}
+      <button onClick={this.destroyDog}>Delete </button>
       </div>
     );
   }

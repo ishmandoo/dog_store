@@ -6,7 +6,7 @@ var bodyParser = require('body-parser')
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/dogstore');
 
-var Product = mongoose.model('Product', { name: String , description:String});
+var Product = require('./models/product')
 
 Product.count({}, function(err, count){
   if(count==0){
@@ -47,6 +47,19 @@ app.post('/api/products', function(req, res){
     new_product.save(function (err) {
         console.log('meow. Made a dog.');
       });
+});
+
+app.delete('/api/products', function(req, res){
+  console.log(req.body)
+    Product.findOne(req.body, function(err,destroy_dog){
+      if (destroy_dog){
+            destroy_dog.remove(function (err) {
+              console.log('meow. Killed a dog.');
+        });
+      }
+
+    });
+
 });
 
 
