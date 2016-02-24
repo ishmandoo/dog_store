@@ -33,7 +33,7 @@ app.use(bodyParser.json())
 
 
 
-app.use('/', express.static(path.join(__dirname, '../public')));
+app.use('/', express.static(path.join(__dirname, '../client')));
 
 app.get('/api/products', function (req, res) {
   Product.find({}, function(err,products){
