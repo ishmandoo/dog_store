@@ -1,3 +1,7 @@
+import React from 'react';
+import { render } from 'react-dom';
+
+
 var ProductBox = React.createClass({
   getProducts: function() {
     $.ajax({
@@ -88,7 +92,7 @@ var NewProductForm = React.createClass({
   }
 });
 
-ReactDOM.render(
+render(
   <ProductBox />,
   document.getElementById('content')
 );
