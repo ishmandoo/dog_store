@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  web:
+    image: dog_store
+    ports:
+      - "3000:3000"
+    links:
+      - db
+  db:
+    image: mongo

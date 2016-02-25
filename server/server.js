@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser')
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/dogstore');
+mongoose.connect('mongodb://db');
 
 var Product = require('./models/product')
 
