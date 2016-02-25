@@ -7,5 +7,6 @@ services:
       - "3000:3000"
     links:
       - db
+    command: node dog_store/server/server.js
   db:
     image: mongo
